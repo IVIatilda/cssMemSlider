@@ -23,21 +23,29 @@ body {
     overflow: hidden;
 }
 
-.slider img {
-    width: 100%;
-}
-
 input {
     display: none;
 }
 
 .slide {
-    display: none;
     grid-area: slide;
+    margin-left: 100%;
+    transition: z-index 0s 0s, margin-left 0s 3s;
+    z-index: 1;
 }
 
 input:checked + .slide {
-    display: block;
+    animation: 0.5s linear slide;
+    margin-left: 0%;
+    z-index: 10;
+}
+
+@keyframes slide { 
+    from {
+        margin-left: 100%;
+    } to {
+         margin-left: 0%;
+    }
 }
 
 .text {
