@@ -8,12 +8,19 @@ body {
     padding: 20px;
 }
 
+img {
+    width: calc(100vw - 40px);
+    height: auto;
+    max-width: 800px;
+}
+
 .slider {
     max-width: 100%;
     position: relative;
     overflow: hidden;
     display: grid;
     grid-template-areas: "slide slide" "text nav";
+    grid-gap: 15px;
 }
 
 .slides {
@@ -54,11 +61,10 @@ input:checked + .slide {
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
-    margin: 20px 0;
     opacity: 0;
     transition: 0.5s;
     position: relative;
-    transform: translate(0px, 30px);
+    transform: translate(0px, 15px);
 }
 
 input:checked + .slide + .text {
@@ -109,4 +115,16 @@ input#img-4:checked ~ ul.slider-control label#dot-4::before,
 input#img-5:checked ~ ul.slider-control label#dot-5::before,
 input#img-6:checked ~ ul.slider-control label#dot-6::before {
     background: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 500px) {
+    .slider {
+        grid-template-areas:
+            "slide" "nav" "text";
+        text-align: center;
+    }
+
+    ul.slider-control {
+        justify-content: center;
+    }
 }
