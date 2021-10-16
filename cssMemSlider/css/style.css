@@ -65,6 +65,8 @@ input:checked + .slide {
     transition: 0.5s;
     position: relative;
     transform: translate(0px, 15px);
+    display: flex;
+    align-items: center;
 }
 
 input:checked + .slide + .text {
@@ -106,6 +108,14 @@ label::before {
 
 label:hover::before {
     background: rgba(255, 255, 255, 0.6);
+}
+
+label:active::before {
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    top: 3px;
+    left: 3px;
 }
 
 input#img-1:checked ~ ul.slider-control label#dot-1::before,
